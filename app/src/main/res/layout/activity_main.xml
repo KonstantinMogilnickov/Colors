@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Параметры комнаты:"/>
+    <EditText
+        android:id="@+id/editTextHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:hint="Высота комнаты (м)"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editTextWidth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextHeight"
+        android:layout_marginBottom="8dp"
+        android:hint="Ширина комнаты (м)"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Параметры краски:"/>
+    <EditText
+        android:id="@+id/editTextPaintConsumption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextWidth"
+        android:layout_marginBottom="8dp"
+        android:hint="Расход краски (кв.м/л)"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editTextLayers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPaintConsumption"
+        android:layout_marginBottom="8dp"
+        android:hint="Количество слоев"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editTextCanVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextLayers"
+        android:layout_marginBottom="8dp"
+        android:hint="Объем банки (л)"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupReserve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/editTextCanVolume"
+        android:layout_marginBottom="8dp">
+
+        <RadioButton
+            android:id="@+id/radioButton10Percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10% запаса"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/radioButton15Percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15% запаса"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonNoReserve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Без запаса"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Рассчитать"
+        android:layout_below="@+id/radioGroupReserve"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Результат"
+        android:layout_below="@+id/buttonCalculate"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>
