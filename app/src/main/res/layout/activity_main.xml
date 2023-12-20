@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/gray">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Параметры комнаты:"/>
+        android:text="Параметры комнаты:"
+        android:textColor="@color/white"/>
     <EditText
         android:id="@+id/editTextHeight"
         android:layout_width="match_parent"
@@ -19,7 +21,8 @@
         android:layout_marginBottom="8dp"
         android:hint="Высота комнаты (м)"
         android:inputType="numberDecimal"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColorHint="@color/white"/>
 
     <EditText
         android:id="@+id/editTextWidth"
@@ -29,13 +32,15 @@
         android:layout_marginBottom="8dp"
         android:hint="Ширина комнаты (м)"
         android:inputType="numberDecimal"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColorHint="@color/white"/>
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Параметры краски:"/>
+        android:text="Параметры краски:"
+        android:textColor="@color/white"/>
     <EditText
         android:id="@+id/editTextPaintConsumption"
         android:layout_width="match_parent"
@@ -44,7 +49,8 @@
         android:layout_marginBottom="8dp"
         android:hint="Расход краски (кв.м/л)"
         android:inputType="numberDecimal"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColorHint="@color/white"/>
 
     <EditText
         android:id="@+id/editTextLayers"
@@ -54,7 +60,8 @@
         android:layout_marginBottom="8dp"
         android:hint="Количество слоев"
         android:inputType="number"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColorHint="@color/white"/>
 
     <EditText
         android:id="@+id/editTextCanVolume"
@@ -64,7 +71,8 @@
         android:layout_marginBottom="8dp"
         android:hint="Объем банки (л)"
         android:inputType="numberDecimal"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColorHint="@color/white"/>
 
     <RadioGroup
         android:id="@+id/radioGroupReserve"
@@ -79,19 +87,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10% запаса"
-            android:checked="true"/>
+            android:checked="true"
+            android:textColor="@color/white"/>
 
         <RadioButton
             android:id="@+id/radioButton15Percent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="15% запаса"/>
+            android:text="15% запаса"
+            tools:ignore="TouchTargetSizeCheck"
+            android:textColor="@color/white"/>
 
         <RadioButton
             android:id="@+id/radioButtonNoReserve"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Без запаса"/>
+            android:text="Без запаса"
+            android:textColor="@color/white"/>
     </RadioGroup>
 
     <Button
@@ -100,7 +112,9 @@
         android:layout_height="wrap_content"
         android:text="Рассчитать"
         android:layout_below="@+id/radioGroupReserve"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:background="@color/black"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/textViewResult"
@@ -108,6 +122,7 @@
         android:layout_height="wrap_content"
         android:text="Результат"
         android:layout_below="@+id/buttonCalculate"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

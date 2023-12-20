@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,7 +7,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,23 +46,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void calculatePaint() {
-        double height = Double.parseDouble(editTextHeight.getText().toString());
-        double width = Double.parseDouble(editTextWidth.getText().toString());
-        double paintConsumption = Double.parseDouble(editTextPaintConsumption.getText().toString());
-        int layers = Integer.parseInt(editTextLayers.getText().toString());
-        double canVolume = Double.parseDouble(editTextCanVolume.getText().toString());
+        try{
+            double height = Double.parseDouble(editTextHeight.getText().toString());
+            double width = Double.parseDouble(editTextWidth.getText().toString());
+            double paintConsumption = Double.parseDouble(editTextPaintConsumption.getText().toString());
+            int layers = Integer.parseInt(editTextLayers.getText().toString());
+            double canVolume = Double.parseDouble(editTextCanVolume.getText().toString());
 
-        double totalArea = height * width;
-        double totalPaintRequired = paintConsumption * totalArea * layers;
-        double reserveFactor = getReserveFactor();
+            double totalArea = height * width;
+            double totalPaintRequired = paintConsumption * totalArea * layers;
+            double reserveFactor = getReserveFactor();
 
-        double totalVolumeWithReserve = totalPaintRequired * reserveFactor;
+            double totalVolumeWithReserve = totalPaintRequired * reserveFactor;
 
-        if (totalVolumeWithReserve > canVolume) {
-            textViewResult.setText("Не хватит краски. Увеличьте объем банки.");
-        } else {
-            totalVolumeWithReserve = Math.round(totalVolumeWithReserve * 10.0) / 10.0;
-            textViewResult.setText("Итоговый расход: " + totalVolumeWithReserve + " литров краски");
+            if (totalVolumeWithReserve > canVolume) {
+                textViewResult.setText("Не хватит краски. Увеличьте объем банки.");
+            } else {
+                totalVolumeWithReserve = Math.round(totalVolumeWithReserve * 10.0) / 10.0;
+                textViewResult.setText("Итоговый расход: " + totalVolumeWithReserve + " литров краски");
+            }
+        }
+
+        catch (Exception exception){
+            Toast.makeText(this,"Заполните все поля!", Toast.LENGTH_SHORT).show();
         }
     }
 
